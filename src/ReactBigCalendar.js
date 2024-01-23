@@ -17,7 +17,7 @@ export default function ReactBigCalendar() {
   const [currentDate, setDate] = useState(moment().toDate());
 
   const handleSelect = ({ start, end }) => {
-    if(currentView === 'month') end = moment(Date.parse(end)).endOf('day'); 
+    if(currentView === 'month') end = moment(Date.parse(end)).endOf('day').toDate(); 
     const title = window.prompt(`New Event name start:${moment(Date.parse(start)).format('YYYY-MM-DD HH:mm:ss')}, end:${moment(Date.parse(end)).format('YYYY-MM-DD HH:mm:ss')}`);
     if (title)
       setEventsData([
