@@ -69,10 +69,11 @@ export default function ReactBigCalendar() {
   };
 
   const CustomEvent = (value) => {
-    return <div style={{ display: 'flex', flexDirection: 'row', alignContent: 'center', alignItems: 'center' }}>
-      <div className="item-left"></div>
+    return <div className={''} style={{ display: 'flex', flexDirection: 'row', alignContent: 'center', alignItems: "center" }}>
+      {currentView === 'month' && <div className="item-left"></div>}
+      {currentView !== 'month' && <div className="item-nonMonth" style={{ height: '100%', position: 'absolute', top: 0, left: 0 }}></div>}
       <Tooltip title={value.title}>
-        <div>{value.title}</div>
+        <div style={{ marginLeft: currentView !== 'month' ? 10 : 0 }}>{value.title}</div>
       </Tooltip>
     </div>
   }

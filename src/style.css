@@ -56,7 +56,7 @@
 .item-left {
     display: flex;
     background: #2462F2;
-   align-items: center;
+    align-items: center;
     padding: 3px 0 0 6px;
     border-radius: 2px;
     height: 8px;
@@ -64,7 +64,14 @@
     margin-right: 4px;
     opacity: 1;
     width: 8px;
-  }
+}
+
+.item-nonMonth {
+    width: 8px;
+    background: #2462F2;
+    border-radius: 5px 0 0 5px;
+    margin-right: 5px;
+}
 
 .rbc-month-view {
     border: none;
