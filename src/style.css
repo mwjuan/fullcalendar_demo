@@ -80,7 +80,7 @@
 }
 
 .rbc-now, .rbc-time-header-content, .rbc-row-content, .rbc-row-bg, .rbc-row, .rbc-today, .rbc-off-range-bg {
-    background: white !important;
+    background: transparent !important;
 }
 
 .rbc-current-time-indicator {
@@ -116,4 +116,9 @@
 
 .rbc-event-label {
     display: none !important;
+}
+
+.rbc-day-bg:hover, .rbc-off-range-bg:hover {
+    background-color: #ececec !important;
+    cursor: pointer;
 }
