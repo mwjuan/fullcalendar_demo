@@ -96,7 +96,7 @@
 
 .rbc-current {
     display: flex !important;
-    flex-direction: row-reverse !important;
+    justify-content: center !important;
 }
 
 .rbc-current a {
@@ -128,4 +128,8 @@
 .rbc-day-bg:hover, .rbc-off-range-bg:hover {
     background-color: #ececec !important;
     cursor: pointer;
+}
+
+.rbc-date-cell {
+    text-align: center !important;
 }
