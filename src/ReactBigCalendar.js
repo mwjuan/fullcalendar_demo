@@ -17,7 +17,7 @@ export default function ReactBigCalendar() {
   const [currentDate, setDate] = useState(moment().toDate());
 
   const handleSelect = ({ start, end }) => {
-    if(currentView === 'month') end = moment(Date.parse(end)).endOf('day').toDate(); 
+    if (currentView === 'month') end = moment(Date.parse(end)).endOf('day').toDate();
     const title = window.prompt(`New Event name start:${moment(Date.parse(start)).format('YYYY-MM-DD HH:mm:ss')}, end:${moment(Date.parse(end)).format('YYYY-MM-DD HH:mm:ss')}`);
     if (title)
       setEventsData([
@@ -43,13 +43,35 @@ export default function ReactBigCalendar() {
         <Button className="date-pre" icon={<LeftOutlined />}
           onClick={() => {
             let timestamp = Date.parse(currentDate)
-            setDate(moment(timestamp).clone().add('day', -1).toDate())
+
+            if (currentView === 'week') {
+              setDate(moment(timestamp).clone().subtract(7, 'd').toDate())
+            }
+
+            if (currentView === 'day') {
+              setDate(moment(timestamp).clone().subtract(1, 'day').toDate())
+            }
+
+            if (currentView === 'month') {
+              setDate(moment(timestamp).clone().subtract(1, 'M').toDate())
+            }
           }}
         />
         <Button className="date-next" icon={<RightOutlined />}
           onClick={() => {
             let timestamp = Date.parse(currentDate)
-            setDate(moment(timestamp).clone().add('day', 1).toDate())
+
+            if (currentView === 'week') {
+              setDate(moment(timestamp).clone().add(7, 'd').toDate())
+            }
+
+            if (currentView === 'day') {
+              setDate(moment(timestamp).clone().add(1, 'day').toDate())
+            }
+
+            if (currentView === 'month') {
+              setDate(moment(timestamp).clone().add(1, 'M').toDate())
+            }
           }}
         />
         <span className="date-show">{currentView === 'day' ? currentMoment.format('YYYY年MM月DD日') : currentMoment.format('YYYY年  MM月')}</span>
