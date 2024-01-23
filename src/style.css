@@ -86,7 +86,7 @@
     border: none !important;
 }
 
-.rbc-now, .rbc-time-header-content, .rbc-row-content, .rbc-row-bg, .rbc-row, .rbc-today, .rbc-off-range-bg {
+.rbc-now, .rbc-time-header-content, .rbc-row-content, .rbc-row-bg, .rbc-row, .rbc-off-range-bg {
     background: transparent !important;
 }
 
@@ -99,7 +99,7 @@
     justify-content: center !important;
 }
 
-.rbc-current a {
+.rbc-now a {
     display: flex !important;
     text-align: right !important;
     justify-content: center !important;
@@ -132,4 +132,8 @@
 
 .rbc-date-cell {
     text-align: center !important;
+}
+
+.rbc-today {
+    background: #EDEEEE;
 }
