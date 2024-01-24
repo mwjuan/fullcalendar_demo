@@ -112,6 +112,7 @@
 }
 
 .rbc-off-range {
+    background: transparent !important;
     color: black !important;
 }
 
@@ -125,7 +126,7 @@
     display: none !important;
 }
 
-.rbc-day-bg:hover, .rbc-off-range-bg:hover {
+.rbc-day-bg:hover, .rbc-off-range-bg:hover,.rbc-off-range-bg:active {
     background-color: #ececec !important;
     cursor: pointer;
 }
@@ -136,4 +137,8 @@
 
 .rbc-today {
     background: #EDEEEE;
+}
+
+.rbc-selected-cell, .rbc-selected-cell:hover, .rbc-selected-cell:active {
+    background: #ececec !important;
 }
